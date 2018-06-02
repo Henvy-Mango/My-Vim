@@ -51,6 +51,8 @@ set guifont=Consolas_for_Powerline_FixedD:h12
 set helplang=cn  
 set encoding=utf-8
 language messages zh_CN.utf-8
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 
 "统一缩进为4
 set softtabstop=4
@@ -124,6 +126,7 @@ let g:airline_symbols.linenr = '⭡'
 nnoremap <silent> <F2> :NERDTree<CR>	
 "设置NERDTree窗口大小
 let NERDTreeWinSize=25					
+
 
 "Taglist设置
 let Tlist_Show_One_File = 1
