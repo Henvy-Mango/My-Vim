@@ -39,6 +39,7 @@ set matchtime=1					"匹配括号高亮的时间（单位是十分之一秒）
 set ambiwidth=double			"设置为双字宽显示，否则无法完整显示如:☆
 set autoread					"文件修改之后自动读取
 set shortmess=atI				"启动后不显示捐献提示
+set mouse=a						"开启鼠标
 set cursorline					"高亮显现当前行
 set clipboard+=unnamed			"共享剪切板
 
@@ -73,6 +74,9 @@ set noswapfile
 "选中状态下 Ctrl+C复制,一般模式下Ctrl+V粘贴
 vnoremap <C-c> "+y   
 nmap <silent> <C-v> "+p
+
+"按F4去空行
+nnoremap <F4> :g/^\s*$/d<CR>
 
 "插入模式下上下左右移动光标  
 inoremap <c-h> <left>  
