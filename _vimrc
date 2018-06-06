@@ -11,6 +11,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Henvy-Mango/taglist_new'
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()
 
@@ -99,6 +100,24 @@ set guioptions-=b
 "窗口大小和启动位置
 set lines=31 columns=90
 winpos 470 235
+
+"按F5一键编译运行C、C++、Python
+map <F5> :call CompileRunGcc()<CR>  
+func! CompileRunGcc()  
+    exec "w"  
+    if &filetype == 'c'  
+        exec "!g++ % -o %<"  
+        exec "! %<"  
+    elseif &filetype == 'cpp'  
+        exec "!g++ % -o %<"  
+        exec "! %<"  
+    elseif &filetype == 'java'   
+        exec "!javac %"   
+        exec "!java %<"     
+	elseif &filetype == 'python'
+        exec "!python %"
+    endif  
+endfunc 
 
 
 "vim-airline插件设置
